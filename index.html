@@ -35,6 +35,10 @@
     // 🧠 Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
+      
+      const build_user = {firstName, lastName, age};
+
+      return build_user;
 
     }
 
@@ -46,7 +50,20 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
+    function deletePrice(Item) {
+
+      if('price' in Item === false){
+        
+        Item.priceless = true;
+
+        return Item;
+
+      }else{
+        
+        delete Item.price;
+        return Item;
+
+      }
 
     }
 
